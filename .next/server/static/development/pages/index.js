@@ -93,52 +93,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./firebase/index.js":
-/*!***************************!*\
-  !*** ./firebase/index.js ***!
-  \***************************/
-/*! exports provided: getTasks, firestore, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasks", function() { return getTasks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firestore", function() { return firestore; });
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "firebase/app");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
-/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const config = {
-  apiKey: "AIzaSyDJ1GmtIfb8MeId15e7RYyK2KNVh9dYG-8",
-  authDomain: "todoapp-56c16.firebaseapp.com",
-  databaseURL: "https://todoapp-56c16.firebaseio.com",
-  projectId: "todoapp-56c16",
-  storageBucket: "todoapp-56c16.appspot.com",
-  messagingSenderId: "856215311931",
-  appId: "1:856215311931:web:9ef5b7b87ba3059ba66e1e",
-  measurementId: "G-FYF01N4R29"
-};
-
-if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
-  firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(config);
-}
-
-const getTasks = async (lang = 'en') => {
-  const snapshots = await firestore.collection(`tasks`).get();
-  const posts = snapshots.docs.map(doc => {
-    const data = doc.data();
-    return data;
-  });
-  console.log(posts);
-  return posts;
-};
-const firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
-/* harmony default export */ __webpack_exports__["default"] = (firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -150,29 +104,22 @@ const firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore(
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../firebase */ "./firebase/index.js");
 var _jsxFileName = "/home/dekker/Documents/Projects/todo-app/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  console.log(Object(_firebase__WEBPACK_IMPORTED_MODULE_1__["getTasks"])());
-  return __jsx("div", {
-    __self: this,
+const index = () => {
+  return __jsx("h1", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 9
+      lineNumber: 5,
+      columnNumber: 12
     }
-  }, __jsx("h1", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 13
-    }
-  }, "Hello world"));
-});
+  }, "Hello world");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
 
 /***/ }),
 
@@ -185,28 +132,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 module.exports = __webpack_require__(/*! /home/dekker/Documents/Projects/todo-app/pages/index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "firebase/app":
-/*!*******************************!*\
-  !*** external "firebase/app" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("firebase/app");
-
-/***/ }),
-
-/***/ "firebase/firestore":
-/*!*************************************!*\
-  !*** external "firebase/firestore" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("firebase/firestore");
 
 /***/ }),
 

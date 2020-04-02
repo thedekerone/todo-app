@@ -16,20 +16,17 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 
+export const firestore = firebase.firestore();
 
 export const getTasks = async (lang = 'en') => {
     const snapshots = await firestore.collection(`tasks`).get();
     const posts = snapshots.docs.map((doc) => {
-
         const data = doc.data();
-
         return data;
     });
-    console.log(posts)
     return posts
 
 }
 
-export const firestore = firebase.firestore();
 
 export default firebase;
