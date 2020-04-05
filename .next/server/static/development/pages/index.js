@@ -141,40 +141,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "react-icons/go");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_go__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\components\\TaskCreater\\index.js";
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\TaskCreater\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 const TaskCreater = () => {
+  const task = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  const {
+    0: state,
+    1: setState
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    task: '',
+    date: '',
+    category: '',
+    remind: false,
+    note: ''
+  });
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(task.current);
+  };
+
   return __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    onSubmit: handleSubmit,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 28,
       columnNumber: 5
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 29,
       columnNumber: 7
     }
   }, "New Text"), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
     placeholder: "What are you planning?",
+    ref: task,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 30,
       columnNumber: 7
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegBell"], {
@@ -183,7 +202,7 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 32,
       columnNumber: 9
     }
   }), __jsx("input", {
@@ -191,14 +210,14 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 33,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 35,
       columnNumber: 7
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegStickyNote"], {
@@ -207,7 +226,7 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 36,
       columnNumber: 9
     }
   }), __jsx("input", {
@@ -216,14 +235,14 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 37,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 39,
       columnNumber: 7
     }
   }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoTag"], {
@@ -232,7 +251,7 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 40,
       columnNumber: 9
     }
   }), __jsx("input", {
@@ -241,21 +260,22 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 41,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["ButtonContainer"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    type: "submit",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, "Create")));
@@ -345,7 +365,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GlobalStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../GlobalStyles */ "./GlobalStyles.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\pages\\index.js";
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -404,7 +424,7 @@ const index = () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pingu\OneDrive\Documentos\proyectos\todo-app\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! G:\100dayschallenge\todo-app\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

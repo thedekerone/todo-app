@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from 'react';
 import {
   Header,
   TextInput,
@@ -6,15 +6,28 @@ import {
   Container,
   TaskOption,
   ButtonContainer,
-} from "./style";
-import { FaRegBell, FaRegStickyNote } from "react-icons/fa";
-import { GoTag } from "react-icons/go";
+} from './style';
+import { FaRegBell, FaRegStickyNote } from 'react-icons/fa';
+import { GoTag } from 'react-icons/go';
 
 export const TaskCreater = () => {
+  const task = useRef(null);
+  const [state, setState] = useState({
+    task: '',
+    date: '',
+    category: '',
+    remind: false,
+    note: '',
+  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log( task.current);
+  };
+
   return (
-    <Container>
+    <Container onSubmit={handleSubmit}>
       <Header>New Text</Header>
-      <TextInput placeholder="What are you planning?" />
+      <TextInput placeholder="What are you planning?" ref={task} />
       <TaskOption>
         <FaRegBell color="blue" size="18"></FaRegBell>
         <input type="date" />
@@ -28,7 +41,7 @@ export const TaskCreater = () => {
         <input type="text" placeholder="Category" />
       </TaskOption>
       <ButtonContainer>
-        <Button>Create</Button>
+        <Button type="submit">Create</Button>
       </ButtonContainer>
     </Container>
   );
