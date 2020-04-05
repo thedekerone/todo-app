@@ -93,6 +93,43 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./GlobalStyles.js":
+/*!*************************!*\
+  !*** ./GlobalStyles.js ***!
+  \*************************/
+/*! exports provided: GlobalStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalStyle", function() { return GlobalStyle; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobalStyle"]`
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+html{
+    font-size:62.5%;
+    
+
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size:1.4rem;
+   
+}
+`;
+
+/***/ }),
+
 /***/ "./components/TaskCreater/index.js":
 /*!*****************************************!*\
   !*** ./components/TaskCreater/index.js ***!
@@ -110,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "react-icons/go");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_go__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\components\\TaskCreater\\index.js";
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\TaskCreater\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -131,7 +168,7 @@ const TaskCreater = () => {
       lineNumber: 9,
       columnNumber: 7
     }
-  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
+  }, "New Text"), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
     placeholder: "What are you planning?",
     __self: undefined,
     __source: {
@@ -247,23 +284,23 @@ __webpack_require__.r(__webpack_exports__);
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "style__Container",
   componentId: "du6wo4-0"
-})(["max-width:900px;width:100%;margin:0 auto;"]);
-const TextInput = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.input.withConfig({
+})(["max-width:600px;width:100%;margin:8rem auto;background-color:teal;"]);
+const TextInput = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.textarea.withConfig({
   displayName: "style__TextInput",
   componentId: "du6wo4-1"
-})(["background-color:white;color:blue;"]);
-const Header = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
+})(["background-color:white;color:blue;width:100%;padding:1rem;font-size:4rem;border:none;height:20rem;resize:none;"]);
+const Header = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h3.withConfig({
   displayName: "style__Header",
   componentId: "du6wo4-2"
-})(["border-bottom:1px solid grey;"]);
+})(["border-bottom:1px solid grey;text-align:center;"]);
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
   displayName: "style__Button",
   componentId: "du6wo4-3"
-})(["background-color:teal;color:white;text-align:center;"]);
+})(["color:white;text-align:center;border:none;background-color:#0a2463;padding:1rem 3rem;width:100%;font-size:2.4rem;border-radius:5px;margin:2rem;"]);
 const TaskOption = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(_utilities_style__WEBPACK_IMPORTED_MODULE_1__["FlexContainer"]).withConfig({
   displayName: "style__TaskOption",
   componentId: "du6wo4-4"
-})(["padding:0.8rem 0;& input{border:0;margin-left:1rem;}"]);
+})(["padding:0.8rem 0;& input{border:0;margin-left:1rem;width:100%;padding:1rem;}"]);
 
 /***/ }),
 
@@ -283,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 const FlexContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "style__FlexContainer",
   componentId: "f9mjsj-0"
-})(["display:flex;"]);
+})(["display:flex;align-items:center;"]);
 
 /***/ }),
 
@@ -299,27 +336,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TaskCreater */ "./components/TaskCreater/index.js");
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\pages\\index.js";
+/* harmony import */ var _GlobalStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../GlobalStyles */ "./GlobalStyles.js");
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const index = () => {
-  return __jsx("h1", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 5
-    }
-  }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GlobalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
       columnNumber: 7
     }
-  }));
+  }), __jsx("h1", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 7
+    }
+  }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
@@ -333,7 +379,7 @@ const index = () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pingu\OneDrive\Documentos\proyectos\todo-app\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! G:\100dayschallenge\todo-app\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

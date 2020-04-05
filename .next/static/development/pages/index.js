@@ -1,5 +1,34 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
+/***/ "./GlobalStyles.js":
+/*!*************************!*\
+  !*** ./GlobalStyles.js ***!
+  \*************************/
+/*! exports provided: GlobalStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalStyle", function() { return GlobalStyle; });
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+function _templateObject() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600&display=swap');\n\n\n*{\n    margin:0;\n    padding:0;\n    box-sizing:border-box;\n\n}\nhtml{\n    font-size:62.5%;\n    \n\n}\nbody{\n    font-family: 'Nunito', sans-serif;\n    font-size:1.4rem;\n   \n}\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject());
+
+/***/ }),
+
 /***/ "./components/TaskCreater/index.js":
 /*!*****************************************!*\
   !*** ./components/TaskCreater/index.js ***!
@@ -16,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "./node_modules/react-icons/go/index.esm.js");
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\components\\TaskCreater\\index.js";
+    _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\TaskCreater\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -38,7 +67,7 @@ var TaskCreater = function TaskCreater() {
       lineNumber: 9,
       columnNumber: 7
     }
-  }), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
+  }, "New Text"), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
     placeholder: "What are you planning?",
     __self: _this,
     __source: {
@@ -153,23 +182,23 @@ __webpack_require__.r(__webpack_exports__);
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "style__Container",
   componentId: "du6wo4-0"
-})(["max-width:900px;width:100%;margin:0 auto;"]);
-var TextInput = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].input.withConfig({
+})(["max-width:600px;width:100%;margin:8rem auto;background-color:teal;"]);
+var TextInput = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].textarea.withConfig({
   displayName: "style__TextInput",
   componentId: "du6wo4-1"
-})(["background-color:white;color:blue;"]);
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
+})(["background-color:white;color:blue;width:100%;padding:1rem;font-size:4rem;border:none;height:20rem;resize:none;"]);
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3.withConfig({
   displayName: "style__Header",
   componentId: "du6wo4-2"
-})(["border-bottom:1px solid grey;"]);
+})(["border-bottom:1px solid grey;text-align:center;"]);
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "style__Button",
   componentId: "du6wo4-3"
-})(["background-color:teal;color:white;text-align:center;"]);
+})(["color:white;text-align:center;border:none;background-color:#0a2463;padding:1rem 3rem;width:100%;font-size:2.4rem;border-radius:5px;margin:2rem;"]);
 var TaskOption = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(_utilities_style__WEBPACK_IMPORTED_MODULE_1__["FlexContainer"]).withConfig({
   displayName: "style__TaskOption",
   componentId: "du6wo4-4"
-})(["padding:0.8rem 0;& input{border:0;margin-left:1rem;}"]);
+})(["padding:0.8rem 0;& input{border:0;margin-left:1rem;width:100%;padding:1rem;}"]);
 
 /***/ }),
 
@@ -188,7 +217,31 @@ __webpack_require__.r(__webpack_exports__);
 var FlexContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "style__FlexContainer",
   componentId: "f9mjsj-0"
-})(["display:flex;"]);
+})(["display:flex;align-items:center;"]);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _taggedTemplateLiteral; });
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
+}
 
 /***/ }),
 
@@ -1049,10 +1102,10 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js!./":
-/*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js ***!
-  \***************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js!./":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js ***!
+  \******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12327,29 +12380,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TaskCreater */ "./components/TaskCreater/index.js");
+/* harmony import */ var _GlobalStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../GlobalStyles */ "./GlobalStyles.js");
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\pages\\index.js";
+    _jsxFileName = "G:\\100dayschallenge\\todo-app\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var index = function index() {
-  return __jsx("h1", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 5
-    }
-  }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_GlobalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
       columnNumber: 7
     }
-  }));
+  }), __jsx("h1", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 7
+    }
+  }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
@@ -12357,13 +12419,13 @@ var index = function index() {
 /***/ }),
 
 /***/ 1:
-/*!*******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js ***!
-  \*******************************************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js!./");
 
 
 /***/ }),
