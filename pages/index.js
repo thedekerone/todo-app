@@ -1,13 +1,21 @@
-import React from 'react';
-import { TaskCreater } from '../components/TaskCreater';
-import { GlobalStyle } from '../GlobalStyles';
+import React from "react";
+import { TaskCreater } from "../components/TaskCreater";
+import { GlobalStyle } from "../GlobalStyles";
+import Head from "next/head";
+
 const index = () => {
   return (
     <>
-      <GlobalStyle></GlobalStyle>
-      <h1>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Nunito:300,400,600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <div>
         <TaskCreater></TaskCreater>
-      </h1>
+      </div>
+      <GlobalStyle></GlobalStyle>
     </>
   );
 };

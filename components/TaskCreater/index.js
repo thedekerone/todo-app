@@ -1,7 +1,14 @@
-import React from 'react';
-import { Header, TextInput, Button, Container, TaskOption } from './style';
-import { FaRegBell, FaRegStickyNote } from 'react-icons/fa';
-import { GoTag } from 'react-icons/go';
+import React, { useState } from "react";
+import {
+  Header,
+  TextInput,
+  Button,
+  Container,
+  TaskOption,
+  ButtonContainer,
+} from "./style";
+import { FaRegBell, FaRegStickyNote } from "react-icons/fa";
+import { GoTag } from "react-icons/go";
 
 export const TaskCreater = () => {
   return (
@@ -20,8 +27,9 @@ export const TaskCreater = () => {
         <GoTag color="grey" size="18"></GoTag>
         <input type="text" placeholder="Category" />
       </TaskOption>
-
-      <Button>Create</Button>
+      <ButtonContainer>
+        <Button>Create</Button>
+      </ButtonContainer>
     </Container>
   );
 };
