@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "./node_modules/react-icons/go/index.esm.js");
 var _this = undefined,
-    _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\TaskCreater\\index.js";
+    _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\components\\TaskCreater\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -56,49 +56,65 @@ var TaskCreater = function TaskCreater() {
   var task = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    task: '',
-    date: '',
-    category: '',
-    remind: false,
-    note: ''
+    task: "",
+    date: "",
+    category: "",
+    // remind: false,
+    note: ""
   }),
       state = _useState[0],
       setState = _useState[1];
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    console.log(task.current);
+    var _event$currentTarget = event.currentTarget,
+        category = _event$currentTarget.category,
+        note = _event$currentTarget.note,
+        date = _event$currentTarget.date,
+        task = _event$currentTarget.task;
+    setState({
+      category: category.value,
+      note: note.value,
+      date: date.value,
+      task: task.value
+    });
+    category.value = "";
+    note.value = "";
+    date.value = "";
+    task.value = "";
   };
 
+  console.log(state);
   return __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     onSubmit: handleSubmit,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 42,
       columnNumber: 5
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, "New Text"), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
     placeholder: "What are you planning?",
-    ref: task,
+    name: "task",
+    id: "task",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 44,
       columnNumber: 7
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 45,
       columnNumber: 7
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegBell"], {
@@ -107,22 +123,24 @@ var TaskCreater = function TaskCreater() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 46,
       columnNumber: 9
     }
   }), __jsx("input", {
     type: "date",
+    name: "date",
+    id: "date",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 47,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegStickyNote"], {
@@ -131,23 +149,25 @@ var TaskCreater = function TaskCreater() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 50,
       columnNumber: 9
     }
   }), __jsx("input", {
     type: "text",
+    name: "note",
+    id: "note",
     placeholder: "Add note",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 51,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 53,
       columnNumber: 7
     }
   }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoTag"], {
@@ -156,23 +176,25 @@ var TaskCreater = function TaskCreater() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 54,
       columnNumber: 9
     }
   }), __jsx("input", {
     type: "text",
+    name: "category",
+    id: "category",
     placeholder: "Category",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 55,
       columnNumber: 9
     }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["ButtonContainer"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -180,7 +202,7 @@ var TaskCreater = function TaskCreater() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, "Create")));
@@ -231,6 +253,25 @@ var TaskOption = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
   displayName: "style__TaskOption",
   componentId: "du6wo4-5"
 })(["padding:0.8rem 2rem;margin-top:1.4rem;border-radius:5px;border:1px solid lightgray;& input{border:0;margin-left:1rem;width:100%;padding:1rem;}"]);
+
+/***/ }),
+
+/***/ "./components/utilities/container/TaskContext.js":
+/*!*******************************************************!*\
+  !*** ./components/utilities/container/TaskContext.js ***!
+  \*******************************************************/
+/*! exports provided: TaskContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskContext", function() { return TaskContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var TaskContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(null); // export const addTask = ({ date = "", task = "", note = "", category = "" }) => {
+//   return null;
+// };
 
 /***/ }),
 
@@ -1385,10 +1426,10 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js!./":
-/*!******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js ***!
-  \******************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js!./":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js ***!
+  \***************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13059,8 +13100,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GlobalStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../GlobalStyles */ "./GlobalStyles.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/utilities/container/TaskContext */ "./components/utilities/container/TaskContext.js");
 var _this = undefined,
-    _jsxFileName = "G:\\100dayschallenge\\todo-app\\pages\\index.js";
+    _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -13068,12 +13110,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var index = function index() {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      state = _useState[0],
+      setState = _useState[1];
+
+  return __jsx(_components_utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_4__["TaskContext"].Provider, {
+    value: {
+      state: state,
+      setState: setState
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 11,
+      columnNumber: 5
+    }
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
       columnNumber: 7
     }
   }, __jsx("link", {
@@ -13082,28 +13140,28 @@ var index = function index() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 13,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 18,
       columnNumber: 7
     }
   }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 19,
       columnNumber: 9
     }
   })), __jsx(_GlobalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 21,
       columnNumber: 7
     }
   }));
@@ -13114,13 +13172,13 @@ var index = function index() {
 /***/ }),
 
 /***/ 1:
-/*!**********************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js ***!
-  \**********************************************************************************************************************/
+/*!*******************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js ***!
+  \*******************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=G%3A%5C100dayschallenge%5Ctodo-app%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cpingu%5COneDrive%5CDocumentos%5Cproyectos%5Ctodo-app%5Cpages%5Cindex.js!./");
 
 
 /***/ }),

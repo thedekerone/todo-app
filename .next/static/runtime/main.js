@@ -942,7 +942,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "G:\\100dayschallenge\\todo-app\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\.next");
       return error;
     }
   };
