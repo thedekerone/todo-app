@@ -1,8 +1,14 @@
-import React, { useContext } from "react";
-import { TaskContext } from "../utilities/container/TaskContext";
-
+import React, { useContext } from 'react';
+import { TaskContext } from '../utilities/container/TaskContext';
+import { Container, TaskDescription, CheckBox } from './style';
 export const Task = () => {
-  const task = useContext(TaskContext);
-  console.log(task);
-  return <div className="container"></div>;
+  return (
+    <Container>
+      <TaskDescription>
+        <div>Here </div>
+        <div>We here</div>
+      </TaskDescription>
+      <CheckBox />
+    </Container>
+  );
 };

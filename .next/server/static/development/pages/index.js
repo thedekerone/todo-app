@@ -124,6 +124,96 @@ body{
 
 /***/ }),
 
+/***/ "./components/Task/index.js":
+/*!**********************************!*\
+  !*** ./components/Task/index.js ***!
+  \**********************************/
+/*! exports provided: Task */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Task", function() { return Task; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utilities/container/TaskContext */ "./components/utilities/container/TaskContext.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style */ "./components/Task/style.js");
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\Task\\index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Task = () => {
+  return __jsx(_style__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 5
+    }
+  }, __jsx(_style__WEBPACK_IMPORTED_MODULE_2__["TaskDescription"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 9
+    }
+  }, "Here "), __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  }, "We here")), __jsx(_style__WEBPACK_IMPORTED_MODULE_2__["CheckBox"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 7
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./components/Task/style.js":
+/*!**********************************!*\
+  !*** ./components/Task/style.js ***!
+  \**********************************/
+/*! exports provided: Container, CheckBox, TaskDescription */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return Container; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckBox", function() { return CheckBox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskDescription", function() { return TaskDescription; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__Container",
+  componentId: "ag5osf-0"
+})(["display:flex;justify-content:space-between;max-width:500px;width:100%;margin:0 auto;padding:1rem;"]);
+const CheckBox = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__CheckBox",
+  componentId: "ag5osf-1"
+})(["width:20px;height:20px;border-radius:4px;padding:2px;border:2px solid black;"]);
+const TaskDescription = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__TaskDescription",
+  componentId: "ag5osf-2"
+})(["display:flex;flex-direction:column;justify-content:space-between;"]);
+
+/***/ }),
+
 /***/ "./components/TaskCreater/index.js":
 /*!*****************************************!*\
   !*** ./components/TaskCreater/index.js ***!
@@ -141,24 +231,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "react-icons/go");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_go__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\components\\TaskCreater\\index.js";
+/* harmony import */ var _utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utilities/container/TaskContext */ "./components/utilities/container/TaskContext.js");
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\components\\TaskCreater\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
 const TaskCreater = () => {
-  const task = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   const {
-    0: state,
-    1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    task: "",
-    date: "",
-    category: "",
-    // remind: false,
-    note: ""
-  });
+    state,
+    setState
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_4__["TaskContext"]); // const [state, setState] = useState({
+  //   task: "",
+  //   date: "",
+  //   category: "",
+  //   // remind: false,
+  //   note: "",
+  // });
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -168,16 +259,16 @@ const TaskCreater = () => {
       date,
       task
     } = event.currentTarget;
-    setState({
+    setState([...state, {
       category: category.value,
       note: note.value,
       date: date.value,
       task: task.value
-    });
-    category.value = "";
-    note.value = "";
-    date.value = "";
-    task.value = "";
+    }]);
+    category.value = '';
+    note.value = '';
+    date.value = '';
+    task.value = '';
   };
 
   console.log(state);
@@ -186,14 +277,14 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 46,
       columnNumber: 5
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Header"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, "New Text"), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TextInput"], {
@@ -203,14 +294,14 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 48,
       columnNumber: 7
     }
   }), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegBell"], {
@@ -219,40 +310,13 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 50,
       columnNumber: 9
     }
   }), __jsx("input", {
     type: "date",
     name: "date",
     id: "date",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 9
-    }
-  })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 7
-    }
-  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegStickyNote"], {
-    color: "grey",
-    size: "18",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 9
-    }
-  }), __jsx("input", {
-    type: "text",
-    name: "note",
-    id: "note",
-    placeholder: "Add note",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -266,7 +330,7 @@ const TaskCreater = () => {
       lineNumber: 53,
       columnNumber: 7
     }
-  }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoTag"], {
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegStickyNote"], {
     color: "grey",
     size: "18",
     __self: undefined,
@@ -277,20 +341,47 @@ const TaskCreater = () => {
     }
   }), __jsx("input", {
     type: "text",
-    name: "category",
-    id: "category",
-    placeholder: "Category",
+    name: "note",
+    id: "note",
+    placeholder: "Add note",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55,
       columnNumber: 9
     }
+  })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["TaskOption"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 7
+    }
+  }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoTag"], {
+    color: "grey",
+    size: "18",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 9
+    }
+  }), __jsx("input", {
+    type: "text",
+    name: "category",
+    id: "category",
+    placeholder: "Category",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 9
+    }
   })), __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["ButtonContainer"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 66,
       columnNumber: 7
     }
   }, __jsx(_style__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -298,7 +389,7 @@ const TaskCreater = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 67,
       columnNumber: 9
     }
   }, "Create")));
@@ -408,8 +499,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_utilities_container_TaskContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/utilities/container/TaskContext */ "./components/utilities/container/TaskContext.js");
-var _jsxFileName = "C:\\Users\\pingu\\OneDrive\\Documentos\\proyectos\\todo-app\\pages\\index.js";
+/* harmony import */ var _components_Task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Task */ "./components/Task/index.js");
+var _jsxFileName = "G:\\100dayschallenge\\todo-app\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -429,14 +522,14 @@ const index = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 5
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 7
     }
   }, __jsx("link", {
@@ -445,28 +538,35 @@ const index = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 14,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 7
     }
   }, __jsx(_components_TaskCreater__WEBPACK_IMPORTED_MODULE_1__["TaskCreater"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 9
     }
-  })), __jsx(_GlobalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], {
+  })), __jsx(_components_Task__WEBPACK_IMPORTED_MODULE_5__["Task"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
+      columnNumber: 7
+    }
+  }), __jsx(_GlobalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
       columnNumber: 7
     }
   }));
@@ -483,7 +583,7 @@ const index = () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\pingu\OneDrive\Documentos\proyectos\todo-app\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! G:\100dayschallenge\todo-app\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

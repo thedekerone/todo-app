@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from 'react';
 import {
   Header,
   TextInput,
@@ -6,34 +6,38 @@ import {
   Container,
   TaskOption,
   ButtonContainer,
-} from "./style";
-import { FaRegBell, FaRegStickyNote } from "react-icons/fa";
-import { GoTag } from "react-icons/go";
+} from './style';
+import { FaRegBell, FaRegStickyNote } from 'react-icons/fa';
+import { GoTag } from 'react-icons/go';
+import { TaskContext } from '../utilities/container/TaskContext';
 
 export const TaskCreater = () => {
-  const task = useRef(null);
+  const { state, setState } = useContext(TaskContext);
 
-  const [state, setState] = useState({
-    task: "",
-    date: "",
-    category: "",
-    // remind: false,
-    note: "",
-  });
+  // const [state, setState] = useState({
+  //   task: "",
+  //   date: "",
+  //   category: "",
+  //   // remind: false,
+  //   note: "",
+  // });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const { category, note, date, task } = event.currentTarget;
-    setState({
-      category: category.value,
-      note: note.value,
-      date: date.value,
-      task: task.value,
-    });
-    category.value = "";
-    note.value = "";
-    date.value = "";
-    task.value = "";
+    setState([
+      ...state,
+      {
+        category: category.value,
+        note: note.value,
+        date: date.value,
+        task: task.value,
+      },
+    ]);
+    category.value = '';
+    note.value = '';
+    date.value = '';
+    task.value = '';
   };
 
   console.log(state);

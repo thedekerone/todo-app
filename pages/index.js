@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { TaskCreater } from "../components/TaskCreater";
-import { GlobalStyle } from "../GlobalStyles";
-import Head from "next/head";
-import { TaskContext } from "../components/utilities/container/TaskContext";
+import React, { useState } from 'react';
+import { TaskCreater } from '../components/TaskCreater';
+import { GlobalStyle } from '../GlobalStyles';
+import Head from 'next/head';
+import { TaskContext } from '../components/utilities/container/TaskContext';
+import { Task } from '../components/Task';
 
 const index = () => {
   const [state, setState] = useState([]);
@@ -18,6 +19,7 @@ const index = () => {
       <div>
         <TaskCreater></TaskCreater>
       </div>
+      <Task />
       <GlobalStyle></GlobalStyle>
     </TaskContext.Provider>
   );
