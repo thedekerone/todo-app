@@ -1,11 +1,13 @@
 import styled from "styled-components";
-import { FlexContainer } from "../utilities/style";
+import { FlexContainer, DefaultContainer } from "../utilities/style";
 
-export const Container = styled.form`
-  max-width: 500px;
+export const Container = styled(DefaultContainer)`
+  margin: 8rem auto;
+`;
+
+export const Form = styled.form`
   width: 100%;
   padding: 0 2rem;
-  margin: 8rem auto;
 `;
 
 export const TextInput = styled.textarea`

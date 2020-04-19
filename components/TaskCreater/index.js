@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext } from "react";
 import {
   Header,
   TextInput,
@@ -6,10 +6,12 @@ import {
   Container,
   TaskOption,
   ButtonContainer,
-} from './style';
-import { FaRegBell, FaRegStickyNote } from 'react-icons/fa';
-import { GoTag } from 'react-icons/go';
-import { TaskContext } from '../utilities/container/TaskContext';
+  Form,
+} from "./style";
+import moment from "moment";
+import { FaRegBell, FaRegStickyNote } from "react-icons/fa";
+import { GoTag } from "react-icons/go";
+import { TaskContext } from "../utilities/container/TaskContext";
 
 export const TaskCreater = () => {
   const { state, setState } = useContext(TaskContext);
@@ -24,48 +26,61 @@ export const TaskCreater = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { category, note, date, task } = event.currentTarget;
+    const { category, note, date, title } = event.currentTarget;
     setState([
       ...state,
       {
         category: category.value,
         note: note.value,
         date: date.value,
-        task: task.value,
+        title: title.value,
       },
     ]);
-    category.value = '';
-    note.value = '';
-    date.value = '';
-    task.value = '';
+    category.value = "";
+    note.value = "";
+    date.value = "";
+    title.value = "";
   };
 
-  console.log(state);
-
+  const defaultDate = moment(new Date()).format("YYYY-MM-DD");
+  console.log(defaultDate);
   return (
-    <Container onSubmit={handleSubmit}>
-      <Header>New Text</Header>
-      <TextInput placeholder="What are you planning?" name="task" id="task" />
-      <TaskOption>
-        <FaRegBell color="blue" size="18"></FaRegBell>
-        <input type="date" name="date" id="date" />
-      </TaskOption>
-      <TaskOption>
-        <FaRegStickyNote color="grey" size="18"></FaRegStickyNote>
-        <input type="text" name="note" id="note" placeholder="Add note" />
-      </TaskOption>
-      <TaskOption>
-        <GoTag color="grey" size="18"></GoTag>
-        <input
-          type="text"
-          name="category"
-          id="category"
-          placeholder="Category"
+    <Container>
+      <Form onSubmit={handleSubmit}>
+        <Header>New Text</Header>
+        <TextInput
+          placeholder="What are you planning?"
+          name="title"
+          id="title"
+          required
         />
-      </TaskOption>
-      <ButtonContainer>
-        <Button type="submit">Create</Button>
-      </ButtonContainer>
+        <TaskOption>
+          <FaRegBell color="blue" size="18"></FaRegBell>
+          <input
+            type="date"
+            defaultValue={defaultDate}
+            name="date"
+            id="date"
+            required
+          />
+        </TaskOption>
+        <TaskOption>
+          <FaRegStickyNote color="grey" size="18"></FaRegStickyNote>
+          <input type="text" name="note" id="note" placeholder="Add note" />
+        </TaskOption>
+        <TaskOption>
+          <GoTag color="grey" size="18"></GoTag>
+          <input
+            type="text"
+            name="category"
+            id="category"
+            placeholder="Category"
+          />
+        </TaskOption>
+        <ButtonContainer>
+          <Button type="submit">Create</Button>
+        </ButtonContainer>
+      </Form>
     </Container>
   );
 };

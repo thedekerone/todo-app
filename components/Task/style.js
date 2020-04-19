@@ -1,11 +1,9 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
+import styled from "styled-components";
+import { DefaultContainer } from "../utilities/style";
+export const Container = styled(DefaultContainer)`
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
+  align-items: center;
   padding: 1rem;
 `;
 
